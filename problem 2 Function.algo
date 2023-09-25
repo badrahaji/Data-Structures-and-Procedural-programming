@@ -1,4 +1,4 @@
-FUNCTION dot_product(v1,v2 : ARRAY_OF integer;)
+FUNCTION dot_product(v1,v2 : ARRAY_OF integer;):integer;
    VAR
    i:integer;
    BEGIN
