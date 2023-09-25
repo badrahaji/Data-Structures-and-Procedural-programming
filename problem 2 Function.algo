@@ -1,0 +1,33 @@
+FUNCTION dot_product(v1,v2 : ARRAY_OF integer;)
+   VAR
+   i:integer;
+   BEGIN
+    ps <- 0
+    FOR i FROM 0 TO LENGTH(v1)-1 STEP step  DO
+        ps <- ps + v1[i] * v2[i]
+    END FOR
+    RETURN ps;
+END PROCEDURE
+
+ALGORITHM orthogonaux 
+VAR
+ps,i,k,n: integer;
+v1,v2 : ARRAY_OF integer[100];
+
+BEGIN
+write("donne le nombre des element ")
+read(n)
+//saisir des elements des vecteurs
+FOR i FROM 0 TO n-1 STEP step  DO
+    read(v1[i]);
+    read(v2[i]);
+END_FOR
+    FOR k FROM 0 TO n-1 STEP step DO
+        ps:= dot_product(v1, v2)
+        IF ps = 0 THEN
+            PRINT "Les vecteurs v1 et v2 sont orthogonaux."
+        ELSE
+            PRINT "Les vecteurs v1 et v2 ne sont pas orthogonaux."
+        END IF
+    END FOR
+END ALGORITHM

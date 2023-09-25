@@ -1,0 +1,49 @@
+ALGORITHM problem 1
+VAR
+    t1 : ARRAY_OF INTEGER[4];
+    t2 : ARRAY_OF INTEGER[4];
+    t3 : ARRAY_OF INTEGER[8];
+sum ,i,j,k : INTEGER ;
+ 
+BEGIN
+
+// remplissage de les deux tableau  dans une seul table
+FOR i FROM 0 TO lenght.t1-1 STEP step   DO
+t3[i]:= t1[i];
+END_FOR
+i:=0;
+FOR j FROM lenght.t1 TO  (lenght.t1-1 )+(lenght.t2 -1) STEP step DO
+t3[j]:=t2[i];
+i:=i+1;
+END_FOR
+// fin de remplissage
+
+//initialisation de mes compteur
+i:=0;
+j:=0;
+k:=0;
+sum := 0;
+FOR i FROM 0 TO lenght.t3-1 STEP step  DO
+    FOR j FROM 0 TO lenght.t3-1 STEP step  DO
+    IF (i==j) THEN
+    // si les deux compteur dans meme spot  
+        break;
+    ELSE_IF (t[i]<>t[j]) THEN
+    // si les element diferent en remplir element k avec avec element de notre indice "i"
+       k:=t3[i] break; 
+
+// si les element est egals vas initialiser les valeur de case du table a zero 
+
+    ELSE_IF (t3[i]==t3[j]) THEN
+    t3[i]:=0;
+    t3[j]:=0;
+    k:=0;
+    break;
+    END_IF
+END_FOR
+// calcule du somme depuis element sortie "k"
+sum:=sum+k;
+END_FOR;
+
+write (" la somme des elements distinct est", sum);
+END.
